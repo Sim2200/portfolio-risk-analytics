@@ -119,6 +119,15 @@ def main() -> None:
         s["worst_year"] = min(s["yearly_returns"], key=s["yearly_returns"].get)
         bt["strategies"][name] = s
 
+    # How much Ledoit-Wolf actually shrinks on 36-month windows of 30 assets (why it barely differs)
+    from prisk.backtest import month_ends
+    from prisk.covariance import ledoit_wolf_cov
+    ends = month_ends(assets.index)
+    intensities = [ledoit_wolf_cov(assets.loc[ends[i - a.fit_months]:ends[i]].iloc[1:])[1] for i in range(a.fit_months, len(ends) - 1)]
+    bt["ledoit_wolf_shrinkage_intensity"] = {"mean": round(float(np.mean(intensities)), 4), "min": round(float(np.min(intensities)), 4),
+                                             "max": round(float(np.max(intensities)), 4), "fit_windows": len(intensities),
+                                             "obs_per_window": int(len(assets.loc[ends[0]:ends[a.fit_months]]) - 1), "assets": int(assets.shape[1])}
+
     # Ledoit-Wolf vs sample, whole sample and by 3-year block, for each optimiser family
     for family in ("min_variance", "max_sharpe", "risk_parity"):
         a_s, b_s = series[f"{family}_sample"], series[f"{family}_ledoit_wolf"]
@@ -131,6 +140,8 @@ def main() -> None:
                                         "ledoit_wolf_vol": round(summary(sb, 0.0)["ann_vol"], 4)}
         wins = sum(v["ledoit_wolf_sharpe"] > v["sample_sharpe"] for v in comp["by_period"].values())
         comp["ledoit_wolf_wins_sharpe_in_periods"] = f"{wins} of {len(comp['by_period'])}"
+        comp["max_abs_sharpe_difference_by_period"] = round(max(abs(v["ledoit_wolf_sharpe"] - v["sample_sharpe"]) for v in comp["by_period"].values()), 4)
+        comp["mean_abs_weight_difference"] = round(float((results[f"{family}_sample"]["weights"] - results[f"{family}_ledoit_wolf"]["weights"]).abs().sum(axis=1).mean()), 4)
         bt["covariance_comparison"][family] = comp
     dump("backtest.json", bt)
 

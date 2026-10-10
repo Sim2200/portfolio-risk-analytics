@@ -1,0 +1,502 @@
+{
+  "config": {
+    "fit_months": 36,
+    "cost_bps": 10.0,
+    "cap": 0.1,
+    "rebalance": "monthly (last trading day)",
+    "expected_returns": "trailing sample mean",
+    "risk_free": "Ken French daily RF",
+    "oos_start": "2013-02-01",
+    "oos_end": "2026-08-31",
+    "oos_days": 3415
+  },
+  "strategies": {
+    "equal_weight": {
+      "ann_return": 0.155855,
+      "ann_vol": 0.156698,
+      "sharpe": 0.888883,
+      "sortino": 1.260556,
+      "max_drawdown": -0.327113,
+      "turnover": 0.292504,
+      "n_days": 3415,
+      "start": "2013-02-01",
+      "end": "2026-08-31",
+      "total_cost_drag_annualized": 0.000586,
+      "weights": {
+        "mean_max_weight": 0.033333,
+        "mean_effective_n": 30.0,
+        "rebalances": 163
+      },
+      "yearly_returns": {
+        "2013": 0.2423,
+        "2014": 0.12309,
+        "2015": 0.052864,
+        "2016": 0.178827,
+        "2017": 0.267695,
+        "2018": -0.003664,
+        "2019": 0.268499,
+        "2020": 0.07865,
+        "2021": 0.267115,
+        "2022": -0.065816,
+        "2023": 0.161309,
+        "2024": 0.181972,
+        "2025": 0.22532,
+        "2026": 0.194907
+      },
+      "worst_year": "2022"
+    },
+    "min_variance_sample": {
+      "ann_return": 0.097886,
+      "ann_vol": 0.133247,
+      "sharpe": 0.633401,
+      "sortino": 0.890001,
+      "max_drawdown": -0.294918,
+      "turnover": 0.526245,
+      "n_days": 3415,
+      "start": "2013-02-01",
+      "end": "2026-08-31",
+      "total_cost_drag_annualized": 0.001055,
+      "weights": {
+        "mean_max_weight": 0.1,
+        "mean_effective_n": 11.967,
+        "rebalances": 163
+      },
+      "yearly_returns": {
+        "2013": 0.138388,
+        "2014": 0.104744,
+        "2015": 0.014617,
+        "2016": 0.141736,
+        "2017": 0.191809,
+        "2018": -0.015231,
+        "2019": 0.238742,
+        "2020": 0.032049,
+        "2021": 0.131469,
+        "2022": -0.046792,
+        "2023": 0.014037,
+        "2024": 0.124273,
+        "2025": 0.138726,
+        "2026": 0.158243
+      },
+      "worst_year": "2022"
+    },
+    "min_variance_ledoit_wolf": {
+      "ann_return": 0.098298,
+      "ann_vol": 0.133232,
+      "sharpe": 0.636271,
+      "sortino": 0.894069,
+      "max_drawdown": -0.295007,
+      "turnover": 0.520687,
+      "n_days": 3415,
+      "start": "2013-02-01",
+      "end": "2026-08-31",
+      "total_cost_drag_annualized": 0.001044,
+      "weights": {
+        "mean_max_weight": 0.1,
+        "mean_effective_n": 12.105,
+        "rebalances": 163
+      },
+      "yearly_returns": {
+        "2013": 0.139013,
+        "2014": 0.105167,
+        "2015": 0.014362,
+        "2016": 0.141306,
+        "2017": 0.192145,
+        "2018": -0.015216,
+        "2019": 0.240118,
+        "2020": 0.032935,
+        "2021": 0.130108,
+        "2022": -0.045736,
+        "2023": 0.015345,
+        "2024": 0.12437,
+        "2025": 0.13904,
+        "2026": 0.159349
+      },
+      "worst_year": "2022"
+    },
+    "max_sharpe_sample": {
+      "ann_return": 0.120157,
+      "ann_vol": 0.157304,
+      "sharpe": 0.686613,
+      "sortino": 0.961673,
+      "max_drawdown": -0.277515,
+      "turnover": 1.643773,
+      "n_days": 3415,
+      "start": "2013-02-01",
+      "end": "2026-08-31",
+      "total_cost_drag_annualized": 0.003295,
+      "weights": {
+        "mean_max_weight": 0.1,
+        "mean_effective_n": 10.981,
+        "rebalances": 163
+      },
+      "yearly_returns": {
+        "2013": 0.165842,
+        "2014": 0.141222,
+        "2015": 0.090076,
+        "2016": 0.069097,
+        "2017": 0.316714,
+        "2018": -0.001554,
+        "2019": 0.233089,
+        "2020": 0.158034,
+        "2021": 0.179938,
+        "2022": -0.182054,
+        "2023": 0.06283,
+        "2024": 0.165435,
+        "2025": 0.267371,
+        "2026": 0.055242
+      },
+      "worst_year": "2022"
+    },
+    "max_sharpe_ledoit_wolf": {
+      "ann_return": 0.12027,
+      "ann_vol": 0.157451,
+      "sharpe": 0.686764,
+      "sortino": 0.961794,
+      "max_drawdown": -0.277883,
+      "turnover": 1.637487,
+      "n_days": 3415,
+      "start": "2013-02-01",
+      "end": "2026-08-31",
+      "total_cost_drag_annualized": 0.003283,
+      "weights": {
+        "mean_max_weight": 0.1,
+        "mean_effective_n": 11.031,
+        "rebalances": 163
+      },
+      "yearly_returns": {
+        "2013": 0.166663,
+        "2014": 0.14062,
+        "2015": 0.090361,
+        "2016": 0.068887,
+        "2017": 0.317434,
+        "2018": -0.001456,
+        "2019": 0.232295,
+        "2020": 0.15718,
+        "2021": 0.180496,
+        "2022": -0.182161,
+        "2023": 0.062747,
+        "2024": 0.165622,
+        "2025": 0.268368,
+        "2026": 0.055934
+      },
+      "worst_year": "2022"
+    },
+    "risk_parity_sample": {
+      "ann_return": 0.142042,
+      "ann_vol": 0.147653,
+      "sharpe": 0.852511,
+      "sortino": 1.205332,
+      "max_drawdown": -0.31667,
+      "turnover": 0.290315,
+      "n_days": 3415,
+      "start": "2013-02-01",
+      "end": "2026-08-31",
+      "total_cost_drag_annualized": 0.000582,
+      "weights": {
+        "mean_max_weight": 0.052763,
+        "mean_effective_n": 27.988,
+        "rebalances": 163
+      },
+      "yearly_returns": {
+        "2013": 0.222542,
+        "2014": 0.120525,
+        "2015": 0.044293,
+        "2016": 0.167279,
+        "2017": 0.253845,
+        "2018": 0.002783,
+        "2019": 0.259985,
+        "2020": 0.073177,
+        "2021": 0.240014,
+        "2022": -0.060961,
+        "2023": 0.123154,
+        "2024": 0.169397,
+        "2025": 0.18554,
+        "2026": 0.175125
+      },
+      "worst_year": "2022"
+    },
+    "risk_parity_ledoit_wolf": {
+      "ann_return": 0.142117,
+      "ann_vol": 0.147695,
+      "sharpe": 0.852757,
+      "sortino": 1.205698,
+      "max_drawdown": -0.316714,
+      "turnover": 0.290267,
+      "n_days": 3415,
+      "start": "2013-02-01",
+      "end": "2026-08-31",
+      "total_cost_drag_annualized": 0.000582,
+      "weights": {
+        "mean_max_weight": 0.052585,
+        "mean_effective_n": 28.011,
+        "rebalances": 163
+      },
+      "yearly_returns": {
+        "2013": 0.222611,
+        "2014": 0.120539,
+        "2015": 0.044324,
+        "2016": 0.167305,
+        "2017": 0.25389,
+        "2018": 0.002758,
+        "2019": 0.259999,
+        "2020": 0.073229,
+        "2021": 0.240223,
+        "2022": -0.061006,
+        "2023": 0.123311,
+        "2024": 0.169496,
+        "2025": 0.185842,
+        "2026": 0.175246
+      },
+      "worst_year": "2022"
+    },
+    "spy": {
+      "ann_return": 0.147492,
+      "ann_vol": 0.168163,
+      "sharpe": 0.796193,
+      "sortino": 1.119316,
+      "max_drawdown": -0.337173,
+      "turnover": null,
+      "n_days": 3415,
+      "start": "2013-02-01",
+      "end": "2026-08-31",
+      "yearly_returns": {
+        "2013": 0.258647,
+        "2014": 0.134638,
+        "2015": 0.012343,
+        "2016": 0.119979,
+        "2017": 0.217054,
+        "2018": -0.04569,
+        "2019": 0.312239,
+        "2020": 0.183316,
+        "2021": 0.287288,
+        "2022": -0.181754,
+        "2023": 0.261758,
+        "2024": 0.248865,
+        "2025": 0.17719,
+        "2026": 0.130816
+      },
+      "worst_year": "2022"
+    },
+    "60_40": {
+      "ann_return": 0.096142,
+      "ann_vol": 0.103727,
+      "sharpe": 0.764553,
+      "sortino": 1.068372,
+      "max_drawdown": -0.216343,
+      "turnover": 0.088015,
+      "n_days": 3415,
+      "start": "2013-02-01",
+      "end": "2026-08-31",
+      "yearly_returns": {
+        "2013": 0.142885,
+        "2014": 0.104893,
+        "2015": 0.011474,
+        "2016": 0.08215,
+        "2017": 0.141342,
+        "2018": -0.023464,
+        "2019": 0.219,
+        "2020": 0.14617,
+        "2021": 0.157476,
+        "2022": -0.15853,
+        "2023": 0.176416,
+        "2024": 0.149815,
+        "2025": 0.135421,
+        "2026": 0.077553
+      },
+      "worst_year": "2022"
+    }
+  },
+  "covariance_comparison": {
+    "min_variance": {
+      "full_sample": {
+        "sample": {
+          "ann_return": 0.097886,
+          "ann_vol": 0.133247,
+          "sharpe": 0.633401,
+          "sortino": 0.890001,
+          "max_drawdown": -0.294918,
+          "turnover": null,
+          "n_days": 3415,
+          "start": "2013-02-01",
+          "end": "2026-08-31"
+        },
+        "ledoit_wolf": {
+          "ann_return": 0.098298,
+          "ann_vol": 0.133232,
+          "sharpe": 0.636271,
+          "sortino": 0.894069,
+          "max_drawdown": -0.295007,
+          "turnover": null,
+          "n_days": 3415,
+          "start": "2013-02-01",
+          "end": "2026-08-31"
+        }
+      },
+      "by_period": {
+        "2013-2015": {
+          "sample_sharpe": 0.8071,
+          "ledoit_wolf_sharpe": 0.809,
+          "sample_vol": 0.1112,
+          "ledoit_wolf_vol": 0.1113
+        },
+        "2016-2018": {
+          "sample_sharpe": 0.886,
+          "ledoit_wolf_sharpe": 0.886,
+          "sample_vol": 0.1074,
+          "ledoit_wolf_vol": 0.1074
+        },
+        "2019-2021": {
+          "sample_sharpe": 0.7034,
+          "ledoit_wolf_sharpe": 0.7046,
+          "sample_vol": 0.184,
+          "ledoit_wolf_vol": 0.1841
+        },
+        "2022-2024": {
+          "sample_sharpe": -0.0187,
+          "ledoit_wolf_sharpe": -0.0121,
+          "sample_vol": 0.1244,
+          "ledoit_wolf_vol": 0.1243
+        },
+        "2025-2026": {
+          "sample_sharpe": 1.1233,
+          "ledoit_wolf_sharpe": 1.1314,
+          "sample_vol": 0.1161,
+          "ledoit_wolf_vol": 0.1159
+        }
+      },
+      "ledoit_wolf_wins_sharpe_in_periods": "4 of 5",
+      "max_abs_sharpe_difference_by_period": 0.0081,
+      "mean_abs_weight_difference": 0.0147
+    },
+    "max_sharpe": {
+      "full_sample": {
+        "sample": {
+          "ann_return": 0.120157,
+          "ann_vol": 0.157304,
+          "sharpe": 0.686613,
+          "sortino": 0.961673,
+          "max_drawdown": -0.277515,
+          "turnover": null,
+          "n_days": 3415,
+          "start": "2013-02-01",
+          "end": "2026-08-31"
+        },
+        "ledoit_wolf": {
+          "ann_return": 0.12027,
+          "ann_vol": 0.157451,
+          "sharpe": 0.686764,
+          "sortino": 0.961794,
+          "max_drawdown": -0.277883,
+          "turnover": null,
+          "n_days": 3415,
+          "start": "2013-02-01",
+          "end": "2026-08-31"
+        }
+      },
+      "by_period": {
+        "2013-2015": {
+          "sample_sharpe": 1.0644,
+          "ledoit_wolf_sharpe": 1.0654,
+          "sample_vol": 0.1274,
+          "ledoit_wolf_vol": 0.1274
+        },
+        "2016-2018": {
+          "sample_sharpe": 0.8355,
+          "ledoit_wolf_sharpe": 0.8361,
+          "sample_vol": 0.1375,
+          "ledoit_wolf_vol": 0.1375
+        },
+        "2019-2021": {
+          "sample_sharpe": 0.8915,
+          "ledoit_wolf_sharpe": 0.8897,
+          "sample_vol": 0.2074,
+          "ledoit_wolf_vol": 0.2075
+        },
+        "2022-2024": {
+          "sample_sharpe": -0.1485,
+          "ledoit_wolf_sharpe": -0.1484,
+          "sample_vol": 0.15,
+          "ledoit_wolf_vol": 0.1501
+        },
+        "2025-2026": {
+          "sample_sharpe": 0.9775,
+          "ledoit_wolf_sharpe": 0.9797,
+          "sample_vol": 0.146,
+          "ledoit_wolf_vol": 0.1467
+        }
+      },
+      "ledoit_wolf_wins_sharpe_in_periods": "4 of 5",
+      "max_abs_sharpe_difference_by_period": 0.0022,
+      "mean_abs_weight_difference": 0.0079
+    },
+    "risk_parity": {
+      "full_sample": {
+        "sample": {
+          "ann_return": 0.142042,
+          "ann_vol": 0.147653,
+          "sharpe": 0.852511,
+          "sortino": 1.205332,
+          "max_drawdown": -0.31667,
+          "turnover": null,
+          "n_days": 3415,
+          "start": "2013-02-01",
+          "end": "2026-08-31"
+        },
+        "ledoit_wolf": {
+          "ann_return": 0.142117,
+          "ann_vol": 0.147695,
+          "sharpe": 0.852757,
+          "sortino": 1.205698,
+          "max_drawdown": -0.316714,
+          "turnover": null,
+          "n_days": 3415,
+          "start": "2013-02-01",
+          "end": "2026-08-31"
+        }
+      },
+      "by_period": {
+        "2013-2015": {
+          "sample_sharpe": 1.0896,
+          "ledoit_wolf_sharpe": 1.0898,
+          "sample_vol": 0.1192,
+          "ledoit_wolf_vol": 0.1192
+        },
+        "2016-2018": {
+          "sample_sharpe": 1.0592,
+          "ledoit_wolf_sharpe": 1.0591,
+          "sample_vol": 0.1199,
+          "ledoit_wolf_vol": 0.12
+        },
+        "2019-2021": {
+          "sample_sharpe": 0.8781,
+          "ledoit_wolf_sharpe": 0.8783,
+          "sample_vol": 0.209,
+          "ledoit_wolf_vol": 0.2091
+        },
+        "2022-2024": {
+          "sample_sharpe": 0.3071,
+          "ledoit_wolf_sharpe": 0.3075,
+          "sample_vol": 0.1348,
+          "ledoit_wolf_vol": 0.1349
+        },
+        "2025-2026": {
+          "sample_sharpe": 1.3221,
+          "ledoit_wolf_sharpe": 1.3231,
+          "sample_vol": 0.1245,
+          "ledoit_wolf_vol": 0.1246
+        }
+      },
+      "ledoit_wolf_wins_sharpe_in_periods": "4 of 5",
+      "max_abs_sharpe_difference_by_period": 0.001,
+      "mean_abs_weight_difference": 0.0013
+    }
+  },
+  "ledoit_wolf_shrinkage_intensity": {
+    "mean": 0.026,
+    "min": 0.0132,
+    "max": 0.0566,
+    "fit_windows": 163,
+    "obs_per_window": 756,
+    "assets": 30
+  }
+}

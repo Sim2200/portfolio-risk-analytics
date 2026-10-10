@@ -102,12 +102,18 @@ def benchmark_spy(returns: pd.DataFrame, index_like: pd.DatetimeIndex) -> pd.Ser
 
 
 def benchmark_60_40(returns: pd.DataFrame, index_like: pd.DatetimeIndex, cost_bps: float = 10.0) -> dict:
-    """60% SPY / 40% AGG rebalanced at month ends with the same cost model, out-of-sample period only."""
-    two = returns[["SPY", "AGG"]].reindex(index_like)
+    """60% SPY / 40% AGG rebalanced at month ends with the same cost model, reported over the
+    out-of-sample period. It is run on the full history (its weights need no fit window) so the
+    first out-of-sample month is covered, then cut to `index_like`."""
+    two = returns[["SPY", "AGG"]]
     fixed = lambda r, rf: np.array([0.6, 0.4])  # noqa: E731
-    # run_strategy needs fit_months of history before the first test month; give it a 1-month fit on
-    # the same data (the weights are constant, so the fit window is irrelevant)
-    return run_strategy(two, fixed, pd.Series(0.0, index=two.index), fit_months=1, cost_bps=cost_bps, name="60_40")
+    out = run_strategy(two, fixed, pd.Series(0.0, index=two.index), fit_months=1, cost_bps=cost_bps, name="60_40")
+    for key in ("returns", "gross_returns"):
+        out[key] = out[key].reindex(index_like)
+    out["weights"] = out["weights"][out["weights"].index >= index_like.min() - pd.Timedelta(days=31)]
+    out["turnover"] = out["turnover"][out["turnover"].index >= index_like.min() - pd.Timedelta(days=31)]
+    out["costs"] = out["costs"][out["costs"].index >= index_like.min() - pd.Timedelta(days=31)]
+    return out
 
 
 def annual_turnover(result: dict) -> float:
